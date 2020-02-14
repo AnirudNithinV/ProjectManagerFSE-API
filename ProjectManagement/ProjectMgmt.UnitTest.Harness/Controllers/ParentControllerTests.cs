@@ -1,14 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WebAPI.Controllers;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Moq;
 using WebAPI.Repository;
 using WebAPI;
-using NBench;
 
 namespace ProjectMgmt.UnitTest.Harness
 {
@@ -25,7 +20,7 @@ namespace ProjectMgmt.UnitTest.Harness
             parentTaskList.Add(new Parent_Task
             {
                 ParentID = 1,
-                ParentTask = "Parent Task1"
+                ParentTask = "ParentTask1"
             });
             mockParentRepository.Setup(x => x.GetAll()).Returns(parentTaskList);
 

@@ -14,6 +14,10 @@ namespace WebAPI.Controllers
             this.parentRepository = new Repository<Parent_Task>();
         }
        
+        /// <summary>
+        /// Action method to get all parent tasks
+        /// </summary>
+        /// <returns>Returns action result</returns>
         [Route("GetParentTasks")]
         // GET api/Employee
         public IHttpActionResult GetParentTasks()

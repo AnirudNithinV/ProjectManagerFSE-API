@@ -15,6 +15,7 @@ namespace WebAPI.Controllers
         public IRepository<Project> projectRepository = null;
         public IRepository<Parent_Task> parentRepository = null;
         public IRepository<User> userRepository = null;
+
         public TaskController()
         {
             this.taskRepository = new Repository<Task>();
@@ -23,6 +24,10 @@ namespace WebAPI.Controllers
             this.userRepository = new Repository<User>();
         }
 
+        /// <summary>
+        /// Action method to delete task
+        /// </summary>
+        /// <returns>Returns action result</returns>
         [Route("Delete/{id}")]
         [EnableCors(origins: "*", headers: "*", methods: "*")]
         public IHttpActionResult DeleteTask(int id)
@@ -35,7 +40,11 @@ namespace WebAPI.Controllers
             return Ok();
         }
 
-       
+
+        /// <summary>
+        /// Action method to fetch all existing tasks
+        /// </summary>
+        /// <returns>Returns action result</returns>
         [EnableCors(origins: "*", headers: "*", methods: "*")]
         [Route("GetTasks")]
         public IHttpActionResult GetTasks()
@@ -59,6 +68,11 @@ namespace WebAPI.Controllers
             return Ok(taskViewModels);
         }
 
+
+        /// <summary>
+        /// Action method to create new task
+        /// </summary>
+        /// <returns>Returns action result</returns>
         [HttpPost]
         [Route("Create")]
         public IHttpActionResult CreateTask(TaskModel taskModel)
@@ -103,6 +117,11 @@ namespace WebAPI.Controllers
             return Ok();
         }
 
+
+        /// <summary>
+        /// Action method to update existing tasks
+        /// </summary>
+        /// <returns>Returns action result</returns>
         [HttpPut]
         [Route("Update")]
         public IHttpActionResult UpdateTask(TaskModel taskModel)

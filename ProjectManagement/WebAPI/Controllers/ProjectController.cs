@@ -19,6 +19,11 @@ namespace WebAPI.Controllers
             this.userRepository = new Repository<User>();
             
         }
+
+        /// <summary>
+        /// Action method to get all projects
+        /// </summary>
+        /// <returns>Returns action result</returns>
         // GET api/Employee
         [Route("GetProjects")]
         public IHttpActionResult GetProjects()
@@ -33,6 +38,11 @@ namespace WebAPI.Controllers
             return Ok(result);
         }
 
+
+        /// <summary>
+        /// Action method to delete project by id
+        /// </summary>
+        /// <returns>Returns action result</returns>
         [HttpDelete]
         [Route("Delete/{id}")]
         public IHttpActionResult DeleteProjectById(int id)
@@ -45,6 +55,10 @@ namespace WebAPI.Controllers
             return Ok();
         }
 
+        /// <summary>
+        /// Action method to create new project
+        /// </summary>
+        /// <returns>Returns action result</returns>
         // POST api/Employee
         [Route("Create")]
         [System.Web.Http.HttpPost]
@@ -67,6 +81,10 @@ namespace WebAPI.Controllers
             return Ok();
         }
 
+        /// <summary>
+        /// Action method to update existing project
+        /// </summary>
+        /// <returns>Returns action result</returns>
         [HttpPut]
         [Route("Update")]
         public IHttpActionResult UpdateProject(Project project)

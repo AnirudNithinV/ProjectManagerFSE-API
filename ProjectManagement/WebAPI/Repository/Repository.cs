@@ -21,21 +21,25 @@ namespace WebAPI.Repository
         {
             return dbSet.ToList();
         }
+
         public T GetById(object id)
         {
             return dbSet.Find(id);
         }
+
         public T Insert(T obj)
         {
             dbSet.Add(obj);
             Save();
             return obj;
         }
+
         public void Delete(object id)
         {
             T entityToDelete = dbSet.Find(id);
             Delete(entityToDelete);
         }
+
         public void Delete(T entityToDelete)
         {
             if (context.Entry(entityToDelete).State == EntityState.Detached)
@@ -46,6 +50,7 @@ namespace WebAPI.Repository
             dbSet.Remove(entityToDelete);
             Save();
         }
+
         public T Update(T obj)
         {
             dbSet.Attach(obj);
@@ -54,6 +59,7 @@ namespace WebAPI.Repository
             Save();
             return obj;
         }
+
         public void Save()
         {
             try
@@ -73,6 +79,7 @@ namespace WebAPI.Repository
                 }
             }
         }
+
         protected virtual void Dispose(bool disposing)
         {
             if (disposing)

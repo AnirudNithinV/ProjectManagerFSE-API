@@ -1,10 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WebAPI.Controllers;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Moq;
 using WebAPI.Repository;
 using WebAPI;
@@ -25,10 +21,10 @@ namespace ProjectMgmt.UnitTest.Harness
             userList.Add(new User
             {
                 UserID = 1,
-                FirstName = "Vediyappan",
-                LastName = "Kumaresan",
-                EmployeeID = "694221",
+                FirstName = "Anirud Nithin",
+                LastName = "Velusamy",
                 TaskID = 1,
+                EmployeeID = "203643",
                 ProjectID = 1
             });
 
@@ -67,10 +63,10 @@ namespace ProjectMgmt.UnitTest.Harness
             var result = controller.CreateUser(new User
             {
                 UserID = 1,
-                FirstName = "Vediyappan",
-                LastName = "Kumar",
-                EmployeeID = "694221",
+                FirstName = "Anirud Nithin",
+                LastName = "Velusamy",
                 TaskID = 1,
+                EmployeeID = "203643",
                 ProjectID = 1
             });
             Assert.IsNotNull(result);
@@ -82,10 +78,10 @@ namespace ProjectMgmt.UnitTest.Harness
             var result = controller.UpdateUser(new User
             {
                 UserID = 1,
-                FirstName = "Vediyappan",
-                LastName = "K",
-                EmployeeID = "694221",
+                FirstName = "Anirud Nithin",
+                LastName = "Velusamy",
                 TaskID = 1,
+                EmployeeID = "203643",
                 ProjectID = 1
             });
             Assert.IsNotNull(result);

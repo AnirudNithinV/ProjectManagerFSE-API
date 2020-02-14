@@ -2,7 +2,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WebAPI.Controllers;
 using WebAPI.Models;
-using System.Web;
 using Moq;
 using WebAPI.Repository;
 using WebAPI;
@@ -56,9 +55,9 @@ namespace ProjectMgmt.UnitTest.Harness
             userList.Add(new User
             {
                 UserID = 1,
-                FirstName = "Vinoth",
-                LastName = "Kannan",
-                EmployeeID = "484555",
+                FirstName = "Ushashree",
+                LastName = "Devendranath",
+                EmployeeID = "4020120",
                 TaskID = 1,
                 ProjectID = 1
             });
@@ -71,7 +70,7 @@ namespace ProjectMgmt.UnitTest.Harness
 
             mockTaskRepository.Setup(x => x.GetAll()).Returns(taskList);
             mockTaskRepository.Setup(x => x.GetById(It.IsAny<int>())).Returns(taskList[0]);
-            mockTaskRepository.Setup(x => x.Delete(It.IsAny<int>())).Callback(() => { });//.Throws(new InvalidOperationException("DELETE"));
+            mockTaskRepository.Setup(x => x.Delete(It.IsAny<int>())).Callback(() => { });
             mockTaskRepository.Setup(x => x.Update(It.IsAny<Task>())).Returns(taskList[0]);
             mockTaskRepository.Setup(x => x.Insert(It.IsAny<Task>())).Returns(taskList[0]);
             mockTaskRepository.Setup(x => x.Save()).Callback(() => { });

@@ -1,10 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WebAPI.Controllers;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Moq;
 using WebAPI.Repository;
 using WebAPI;
@@ -28,17 +24,17 @@ namespace ProjectMgmt.UnitTest.Harness
             {
                 ProjectID = 1,
                 Priority = 1,
-                ProjectTitle = "Test Project Title"
+                ProjectTitle = "New Project Management"
             });
 
             List<User> userList = new List<User>();
             userList.Add(new User
             {
                 UserID = 1,
-                FirstName = "Vediyappan",
-                LastName = "K",
+                FirstName = "Anirud Nithin",
+                LastName = "Velusamy",
                 TaskID = 1,
-                EmployeeID = "694221",
+                EmployeeID = "203643",
                 ProjectID = 1
             });
 
